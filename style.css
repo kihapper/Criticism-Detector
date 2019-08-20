@@ -6,11 +6,8 @@ body{
 }
 
 .container{
-    position : fixed;
-    top: 30%;
-    left:50%;
-    transform : translate(-50%, -50%);
     width : 50%;
+    margin: 200px auto 0px auto;
     text-align: center;
 }
 

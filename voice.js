@@ -4,6 +4,9 @@
     var initButton = document.getElementById("Button");
     initButton.addEventListener("click", startRecognition);
 
+    var currentState = "stopped";
+
+
     if ('SpeechRecognition' in window) {
         console.log("This Browser Supports Recognition");
       } else {
@@ -28,8 +31,17 @@
     recognition.continuous = true;
 
     function startRecognition() {
+      
+      if(currentState == "stopped"){
+      initButton.innerHTML = "Pause Recognition"
+      currentState = "recognizing"
       recognition.start();
-
+      }
+      else if (currentState == "recognizing"){
+      initButton.innerHTML = "Start Recognition"
+      currentState = "stopped"
+      recognition.stop();
+      }
     }
 
 
