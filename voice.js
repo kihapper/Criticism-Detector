@@ -37,6 +37,7 @@
       //Inialize interim transcripts
       let interimTranscript = '';
 
+      //event returns the whole dataset. reuslt Index is the depth of each word
       for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
         let transcript = event.results[i][0].transcript;
         if (event.results[i].isFinal) {
