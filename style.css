@@ -1,0 +1,47 @@
+
+body{
+    background-color: lightgoldenrodyellow;
+    height : 100vh;
+    font-family: 'Space Mono', monospace;
+}
+
+.container{
+    position : fixed;
+    top: 30%;
+    left:50%;
+    transform : translate(-50%, -50%);
+    width : 50%;
+    text-align: center;
+}
+
+.Title{
+    font-size: calc(1em + 2vw);
+    margin-bottom: 50px;
+}
+
+.recognitionText{
+    font-size: calc(1.5em );
+    line-height: 1.7;
+}
+
+#Button{
+	background-color:#160BE2;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #160BE2;
+	display:inline-block;
+	cursor:pointer;
+	color: white;
+	font-size:20px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+
+#Button:hover {
+	background-color:darkblue;
+}
+#Button:active {
+	position:relative;
+	top:3px;
+}
