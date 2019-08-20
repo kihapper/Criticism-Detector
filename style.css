@@ -5,14 +5,39 @@ body{
 }
 
 .container{
-    width : 50%;
-    margin: 200px auto 0px auto;
+    width : 70%;
+    margin: 50px auto 0px auto;
     text-align: center;
 }
 
 .Title{
-    font-size: calc(1em + 2vw);
-    margin-bottom: 50px;
+    font-size: calc(1em + 1vw);
+    margin-bottom: 30px;
+}
+
+.explanation{
+    font-size: calc(0.8em + 0.5vw);
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.midwayText{
+    color:gray;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 25vh;
+
+    border-radius: 18px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.finaltext{
+    color: black
+    margin-top: 50px;
 }
 
 .recognitionText{
@@ -22,15 +47,15 @@ body{
 
 #Button{
 	background-color:#160BE2;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
 	border:1px solid #160BE2;
 	display:inline-block;
 	cursor:pointer;
 	color: white;
 	font-size:20px;
-	padding:16px 31px;
+	padding:10px 25px;
 	text-decoration:none;
 }
 

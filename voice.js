@@ -1,6 +1,22 @@
-    
+  
+  // ML5 —————————
+  let prediction;
+  let finalScore;
+  console.log("ml5 version:" +  ml5.version);
+  const sentiment = ml5.sentiment('movieReviews', modelReady);
+
+  // When the model is loaded
+  function modelReady() {
+  console.log("Machine Learning Model Loaded!");
+  }
+
+  // ——————————————
+
     window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
     
+    let midtextTag = document.querySelector(".midwayText");
+    let textTag = document.querySelector(".recognitionText");
+
     var initButton = document.getElementById("Button");
     initButton.addEventListener("click", startRecognition);
 
@@ -14,7 +30,6 @@
       }
 
     //Initiates SpeechRecognition instance
-    let textTag = document.querySelector(".recognitionText");
     let recognition = new window.SpeechRecognition();
     let finalTranscript = '';
 
@@ -53,13 +68,20 @@
       for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
         let transcript = event.results[i][0].transcript;
         if (event.results[i].isFinal) {
-          finalTranscript = finalTranscript + '<br>' + transcript;
+
+          //ml5.js to rate the final transcripts score
+          prediction = sentiment.predict(transcript);
+          console.log("IntermediateScore" + prediction.score);
+          finalScore = Math.floor(prediction.score*100);
+          console.log(finalScore + " for : " + transcript);
+
+          finalTranscript =  transcript + '<br>' + finalScore + "/100" + '<br><br>' + finalTranscript ;
         } else {
-          interimTranscript += transcript;
+          interimTranscript = interimTranscript + transcript;
         }
       }
-
-      textTag.innerHTML = finalTranscript + '<br><i style="color:#ddd;">' + interimTranscript + '</>';
+      midtextTag.innerHTML = interimTranscript;
+      textTag.innerHTML =  '<span class= "finaltext">' + finalTranscript + '</span>';
     }
     
     recognition.onerror = (event) => {
