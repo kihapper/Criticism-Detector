@@ -19,6 +19,7 @@ body{
     font-size: calc(0.8em + 0.5vw);
     margin-top: 15px;
     margin-bottom: 30px;
+    padding: 0 100px 0 100px;
 }
 
 .midwayText{
@@ -27,8 +28,8 @@ body{
     font-style: italic;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 40px 60px 40px 60px;
     height: 25vh;
-
     border-radius: 18px;
     border-color: lightgrey;
     border-style: solid;
@@ -36,13 +37,14 @@ body{
 }
 
 .finaltext{
-    color: black
-    margin-top: 50px;
+    color: black;
 }
 
 .recognitionText{
-    font-size: calc(1.5em );
+    font-size: 18px;
     line-height: 1.7;
+    margin-top: 50px;
+    color: black;
 }
 
 #Button{
