@@ -106,5 +106,4 @@
   recognition.onend = () => {
     console.log('Speech recognition service disconnected');
     currentState = "stopped"
-    startRecognition(); 
   }
