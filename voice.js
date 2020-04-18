@@ -2,11 +2,11 @@
 
   let midtextTag = document.querySelector(".midwayText");
   let textTag = document.querySelector(".recognitionText");
+  let initButton = document.getElementById("Button");
 
-  var initButton = document.getElementById("Button");
   initButton.addEventListener("click", startRecognition);
 
-  var currentState = "stopped";
+  let currentState = "stopped";
 
   // ML5 —————————
   let prediction;
@@ -21,7 +21,7 @@
 
   // Bowser to detect browser——————————————
 
-  var result = bowser.getParser(window.navigator.userAgent);
+  let result = bowser.getParser(window.navigator.userAgent);
   console.log(result);
   console.log("Browser is " + result.parsedResult.browser.name);
 
