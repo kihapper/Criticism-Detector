@@ -1,6 +1,5 @@
   window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 
-  let midtextTag = document.querySelector(".midwayText");
   let textTag = document.querySelector(".recognitionText");
   let initButton = document.getElementById("Button");
 
@@ -83,13 +82,14 @@
         finalScore = Math.floor(prediction.score * 100);
         console.log(finalScore + " for : " + transcript);
 
-        finalTranscript = transcript + '<br>' + '<span class= "score">' + "Score: " + finalScore + "/100" + '</span>' + '<br><br>' + finalTranscript;
+        finalTranscript = transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + '</span>' + '<br><br>' + finalTranscript;
+        textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
       } else {
         interimTranscript = interimTranscript + transcript;
+        textTag.innerHTML = '<span class= "loadingText">' + interimTranscript + "</span>" + '<br><br><br>' + '<span class= "finaltext">' + finalTranscript + '</span>';
       }
     }
-    midtextTag.innerHTML = interimTranscript;
-    textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
+    //midtextTag.innerHTML = interimTranscript;
   }
 
   recognition.onerror = (event) => {

@@ -1,71 +1,77 @@
 
 body{
-    background-color: lightgoldenrodyellow;
+    background-color:#160BE2;
     font-family: 'Space Mono', monospace;
 }
 
 .container{
     width : 70%;
-    margin: 50px auto 0px auto;
+    margin: 30px auto 0px auto;
     text-align: center;
 }
 
 .score{
-    font-size: 1.2em;
+    font-size: 18px;
     font-style: italic;
-    color: #160BE2;
+    color: #ffe200;
+}
+
+.mainemoji{
+    font-size: 50px;
 }
 
 .Title{
-    font-size: calc(1em + 1vw);
-    margin-bottom: 30px;
+    font-size: calc(1.4em + 1vw);
+    margin-bottom: 20px;
+    color: white;;
 }
 
 .explanation{
+    color: white;
     font-size: calc(0.8em + 0.5vw);
     margin-top: 15px;
     margin-bottom: 30px;
-    padding: 0 0.8vw 0 0.8vw;
-}
-
-.midwayText{
-    color:gray;
-    font-size: 1.2em;
-    font-style: italic;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0.5vw 1.5vw 0.5vw 1.5vw;
-    height: 25vh;
-    border-radius: 18px;
-    border-color: lightgrey;
-    border-style: solid;
-    border-width: 1px;
+    padding: 0 0.9vw 0 0.9vw;
 }
 
 .recognitionText{
-    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+
+
+.loadingText{
+    font-size: 18px;
     line-height: 1.7;
     margin-top: 50px;
-    color: black;
+    color: #ffe200;
+    padding: 0.8vw 1.8vw 0.8vw 1.8vw;
+}
+
+.finaltext{
+    font-size: 18px;
+    line-height: 1.7;
+    margin-top: 50px;
+    color: white;
     padding: 0.8vw 1.8vw 0.8vw 1.8vw;
 }
 
 #Button{
-	background-color:#160BE2;
+	background-color:#ffe200;
 	-moz-border-radius:18px;
 	-webkit-border-radius:18px;
 	border-radius:18px;
 	border:none;
 	display:inline-block;
 	cursor:pointer;
-	color: white;
-	font-size:20px;
-	padding:10px 25px;
+	color: #160BE2;
+	font-size:16px;
+	padding:10px 15px;
 	text-decoration:none;
 }
 
 #Button:hover {
-	background-color: rgb(69, 60, 233) ;
+	background-color: rgb(214, 200, 0) ;
 }
 #Button:active {
     position:relative;
@@ -79,9 +85,9 @@ body{
 }
 
 @keyframes fade {
-    from { color : rgba(255, 255, 255,1) ; }
-    50% { color: rgba(255, 255, 255,0.2)  ; }
-    to { color: rgba(255, 255, 255,1); }
+    from { color : rgb(0, 4, 255,1) ; }
+    50% { color: rgba(0, 4, 255,0.2)  ; }
+    to { color: rgba(0, 4, 255,1); }
 }                                                                                                                                                                                                                                  
 
 @-webkit-keyframes fade {
