@@ -7,7 +7,12 @@
 
   let currentState = "stopped";
 
-
+  document.addEventListener("keypress", function(event) {
+    //for debugging output score result
+    if (event.keyCode == 13) {
+      finalScore = 95;
+    }
+  });
   //———Feedback Emoji\
 const angry = "😠"
 const critical = "🤨"
