@@ -110,10 +110,11 @@ function mapRange (value, a, b, c, d) {
         finalScore = Math.floor(prediction.score * 100);
         console.log(finalScore + " for : " + transcript);
 
+        if(debug === true){finalScore = 15}
+
         scoreArray = mapRange(finalScore,0,100,0,4);
         scoreArray = Math.round(scoreArray);
 
-        if(debug === true){finalScore = 15}
 
         finalTranscript =  transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + "  " + emoji[scoreArray] + '</span>' + '<br><br>' + finalTranscript;
         textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
