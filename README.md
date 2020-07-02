@@ -1,9 +1,8 @@
-# AI Movie Review
+# Criticism Detector 
 
-Your spoken review will be rated between 1 ~ 100 by an AI. 
-This AI was trained by a movie review database from IMDB .
+An "AI" that tells you if you sound too critical🤔
 
-Service that turns spoken voice into text and evaluates them using sentiment analysis on ml5.js
-Try speaking something related to movie and it will evaluate the outcome in realtime.
+This is a combination of voice recognition and sentiment analysis in realtime.
+I'm using the model in ml5.js which was trained by a movie review database from IMDB .
 
-Demo movie : https://twitter.com/TomoKihara/status/1164183677317898246
+For more reference : https://learn.ml5js.org/docs/#/reference/index
