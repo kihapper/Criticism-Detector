@@ -7,10 +7,13 @@
 
   let currentState = "stopped";
 
+  let debug = false;
   document.addEventListener("keypress", function(event) {
     //for debugging output score result
     if (event.keyCode == 13) {
-      finalScore = 95;
+      debug = true;
+    }else{
+      debug = false;
     }
   });
   //———Feedback Emoji\
@@ -107,6 +110,8 @@ function mapRange (value, a, b, c, d) {
 
         scoreArray = mapRange(finalScore,0,100,0,4);
         scoreArray = Math.round(scoreArray);
+
+        if(debug === true){finalScore = 95}
 
         finalTranscript =  transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + "  " + emoji[scoreArray] + '</span>' + '<br><br>' + finalTranscript;
         textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
