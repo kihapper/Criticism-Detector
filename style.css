@@ -2,18 +2,29 @@
 body{
     background-color:#160BE2;
     font-family: 'Space Mono', monospace;
+    border-style: solid;
+    border-color: #ffe200;
+    border-width: 15px;
+    margin: 0px;
+    height: 97vh;
+    overflow: hidden;
+
+
 }
 
 .container{
     width : 70%;
-    margin: 30px auto 0px auto;
+    margin: 20px auto 0px auto;
     text-align: center;
 }
 
 .score{
     font-size: 18px;
-    font-style: italic;
     color: #ffe200;
+}
+
+.emoji{
+    font-size: 30px;
 }
 
 .mainemoji{

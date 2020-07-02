@@ -7,6 +7,15 @@
 
   let currentState = "stopped";
 
+
+  //———Feedback Emoji\
+const angry = "😠"
+const critical = "🤨"
+const doubting = "🤔"
+const neutral = "🙂"
+const happy = "😊"
+
+const emoji = ["😠","🤨","🤔","🙂","😊"]
   // ML5 —————————
   let prediction;
   let finalScore;
@@ -51,6 +60,14 @@
   //Will return sentences continously
   recognition.continuous = true;
 
+  // linearly maps value from the range (a..b) to (c..d)
+function mapRange (value, a, b, c, d) {
+  // first map value from (a..b) to (0..1)
+  value = (value - a) / (b - a);
+  // then map it from (0..1) to (c..d) and return it
+  return c + value * (d - c);
+}
+
   function startRecognition() {
 
     if (currentState == "stopped") {
@@ -70,6 +87,7 @@
   recognition.onresult = (event) => {
     //Inialize interim transcripts
     let interimTranscript = '';
+    let scoreArray = 0;
 
     //event returns the whole dataset. reuslt Index is the depth of each word
     for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
@@ -82,7 +100,10 @@
         finalScore = Math.floor(prediction.score * 100);
         console.log(finalScore + " for : " + transcript);
 
-        finalTranscript = transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + '</span>' + '<br><br>' + finalTranscript;
+        scoreArray = mapRange(finalScore,0,100,0,4);
+        scoreArray = Math.round(scoreArray);
+
+        finalTranscript =  transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + "  " + emoji[scoreArray] + '</span>' + '<br><br>' + finalTranscript;
         textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
       } else {
         interimTranscript = interimTranscript + transcript;
