@@ -12,8 +12,10 @@
     //for debugging output score result
     if (event.keyCode == 13) {
       debug = true;
+      console.log(debug);
     }else{
       debug = false;
+      console.log(debug);
     }
   });
   //———Feedback Emoji\
@@ -111,7 +113,7 @@ function mapRange (value, a, b, c, d) {
         scoreArray = mapRange(finalScore,0,100,0,4);
         scoreArray = Math.round(scoreArray);
 
-        if(debug === true){finalScore = 95}
+        if(debug === true){finalScore = 15}
 
         finalTranscript =  transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + "  " + emoji[scoreArray] + '</span>' + '<br><br>' + finalTranscript;
         textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
