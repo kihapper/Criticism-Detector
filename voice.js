@@ -18,14 +18,19 @@
       console.log(debug);
     }
   });
-  //———Feedback Emoji\
-const angry = "😠"
-const critical = "🤨"
-const doubting = "🤔"
-const neutral = "🙂"
-const happy = "😊"
+
 
 const emoji = ["😠","🤨","🤔","🙂","😊"]
+
+recognition.onaudioend = () => {
+  console.log("audio has started");
+  debug = true;
+}
+
+function forVideoRecording(){
+  let dontdo = 0;
+}
+
   // ML5 —————————
   let prediction;
   let finalScore;
@@ -110,7 +115,8 @@ function mapRange (value, a, b, c, d) {
         finalScore = Math.floor(prediction.score * 100);
         console.log(finalScore + " for : " + transcript);
 
-        if(debug === true){finalScore = 15}
+        // for debugging score
+        // if(debug === true){finalScore = 100}
 
         scoreArray = mapRange(finalScore,0,100,0,4);
         scoreArray = Math.round(scoreArray);
