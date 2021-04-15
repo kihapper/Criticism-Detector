@@ -3,6 +3,9 @@
   let textTag = document.querySelector(".recognitionText");
   let initButton = document.getElementById("Button");
 
+
+  //Initiates SpeechRecognition instance
+  let recognition = new window.SpeechRecognition();
   initButton.addEventListener("click", startRecognition);
 
   let currentState = "stopped";
@@ -20,7 +23,7 @@
   });
 
 
-const emoji = ["😠","🤨","🤔","🙂","😊"]
+const emoji = ["mean 😠","critical 🤨","doubtful 🤔","positive 🙂","happy 😊"]
 
 recognition.onaudioend = () => {
   console.log("audio has started");
@@ -49,7 +52,7 @@ function forVideoRecording(){
   console.log("Browser is " + result.parsedResult.browser.name);
 
   if (result.parsedResult.browser.name !== "Chrome") {
-    alert("Sorry, voice recognition is only available on the latest version of Chrome desktop and is not supported on " + result.parsedResult.browser.name);
+    alert("Sorry folks! Voice recognition is only available on the latest version of Chrome desktop and is not supported on " + result.parsedResult.browser.name);
     //initButton.style.display = "none";
   } else {
     console.log("This Browser Supports Recognition");
@@ -59,8 +62,6 @@ function forVideoRecording(){
 
 
 
-  //Initiates SpeechRecognition instance
-  let recognition = new window.SpeechRecognition();
   let finalTranscript = '';
 
   //Show the results midway when recognizing
@@ -121,8 +122,11 @@ function mapRange (value, a, b, c, d) {
         scoreArray = mapRange(finalScore,0,100,0,4);
         scoreArray = Math.round(scoreArray);
 
+        //finalScore has 100(positive) - 0 (negative)
+        // 100 - 0 
 
-        finalTranscript =  transcript + '<br>' + '<span class= "score">' + "Criticism Score: " + (100 - finalScore) + "/100" + "  " + emoji[scoreArray] + '</span>' + '<br><br>' + finalTranscript;
+
+        finalTranscript =  transcript + '<br>' + '<span class= "score">'  + emoji[scoreArray]  + " " + finalScore + "/100" + '</span>' + '<br><br>' + finalTranscript;
         textTag.innerHTML = '<span class= "finaltext">' + finalTranscript + '</span>';
       } else {
         interimTranscript = interimTranscript + transcript;
