@@ -87,12 +87,12 @@ function mapRange (value, a, b, c, d) {
   function startRecognition() {
 
     if (currentState == "stopped") {
-      initButton.innerHTML = "Pause Speech Recognition"
+      initButton.innerHTML = "Start Speaking"
       currentState = "recognizing"
       recognition.start();
       initButton.classList.add("blink");
     } else if (currentState == "recognizing") {
-      initButton.innerHTML = "Start Recognition"
+      initButton.innerHTML = "Start Criticism Detection"
       currentState = "stopped"
       initButton.classList.remove("blink");
       recognition.stop();

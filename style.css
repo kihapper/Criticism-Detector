@@ -8,18 +8,18 @@ body{
     margin: 0px;
     height: 97vh;
     overflow: hidden;
-    
+   
 }
 
 .container{
-    width : 70%;
+    max-width :400px;
     margin: 20px auto 0px auto;
     text-align: center;
 }
 
 .score{
     padding-top: 20px;
-    font-size: 18px;
+    font-size: 25px;
     color: #ffe200;
 }
 
@@ -32,20 +32,18 @@ body{
 }
 
 .Title{
-    font-size: calc(1.1em + 1vw);
+    font-size: 30px;
     margin-bottom: 20px;
     color: white;;
 }
 
 .explanation{
     color: white;
-    font-size: calc(0.8em + 0.5vw);
-    margin-top: 15px;
+    font-size: 20px;
     padding: 0 0.9vw 0 0.9vw;
     max-width: 370px;
     margin: auto;
     margin-bottom: 40px;
-
 }
 
 .recognitionText{
@@ -55,7 +53,7 @@ body{
 
 
 .loadingText{
-    font-size: 18px;
+    font-size: 25px;
     line-height: 1.7;
     margin-top: 50px;
     color: #ffe200;
@@ -65,7 +63,7 @@ body{
 
 
 .finaltext{
-    font-size: 18px;
+    font-size: 25px;
     line-height: 1.7;
     margin-top: 50px;
     color: white;
